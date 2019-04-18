@@ -5,12 +5,15 @@ $('.images > img:nth-child(4)').addClass('enter');
 
 let n = 1;
 setInterval(() => {
-    $('.images > img:nth-child(${x(n)})').removeClass('current').addClass('leave')
-    .one('transitonend', (e) => {
-        $(e.currentTarget).removeClass('leave').addClass('enter');
+    debugger
+    $(`.images > img:nth-child(${x(n)})`).removeClass('current').addClass('leave')
+    .one('transitionend', (e) => {
+        $(e.currentTarget).removeClass('leave').addClass('enter')
     });
-    $('.images > img:nth-child(${x(n+1)})').removeClass('enter').addClass('current');
+    debugger
+    $(`.images > img:nth-child(${x(n+1)})`).removeClass('enter').addClass('current');
     n += 1;
+    debugger
 }, 2000)
 
 function x(n) {
